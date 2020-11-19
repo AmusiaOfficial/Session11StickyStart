@@ -1,0 +1,157 @@
+@* ocean img src https://wallpaperaccess.com/full/1090533.jpg
+mountain img src https://i0.wp.com/wallur.com/wp-content/uploads/2016/12/mountains-background-8.jpg?fit=1920%2C1080
+desert img src https://wallpapercave.com/wp/aZy9vHP.jpg
+forrest img src https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Bamboo_forest_in_Arashiyama_%28bottom_view%29.jpg/1599px-Bamboo_forest_in_Arashiyama_%28bottom_view%29.jpg *@
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+
+
+<table class="scrollleft">
+    @* <colgroup>
+        <col>
+        <col>
+    </colgroup> *@
+    <thead>
+        <tr>
+            <th style="width: 220px">Default</th>
+            <th style="width: 220px">To Do</th>
+            <th style="width: 220px">Working</th>
+            <th style="width: 220px">Done</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><div class="sticky">In the To Do "Column"</div></td>
+            <td><div class="sticky">In the Working "Column"</div></td>
+            <td><div class="sticky">In the Done "Column"</div></td>
+        </tr>
+    </tbody>
+    
+    @* <tbody>
+        <tr>
+            
+            <td></td><td></td><div class="sticky">Test</div></td>
+
+        </tr>
+    </tbody> *@
+</table>
+
+@* <div>
+    <div class="scrollleft">  
+        <div class="column0">Start
+                <button onclick="addstickyclick()">Create a new Sticky</button>
+                <div onclick="addcolumn()">Add a new Column</div>
+                <div class="sticky">Post it somethin fancy</div>
+         <div class="column1">To Do
+
+             <div class="sticky">In the To Do "Column"</div>
+
+         </div>
+        <div class="column2">Working
+
+            <div class="sticky">In the Working "Column"</div>
+
+        </div>
+        <div class="column3">Done
+
+            <div class="sticky">In the Done "Column"</div>
+
+        </div>
+        </div>
+    </div>
+</div> *@
+    <style>
+
+         .sticky{
+            height: 200px;
+            width: 200px;
+            background-color: #fdfd96;
+
+            -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+            @* -webkit-transform:rotate(-6deg);
+            -o-transform:rotate(-6deg);
+            -moz-transform:rotate(-6deg); *@
+            font-family: 'Permanent Marker', cursive;
+        }
+
+        .ocean{}
+        .mountain{}
+        .desert{}
+        .bamboo{}
+        .html
+        {
+            
+        }
+        
+        
+        .scrollleft
+        {
+            overflow-x: scroll;
+            height: 100vh;
+            width: 100vh;
+        }
+        .draggable { width: 90px; height: 80px; padding: 5px; float: left; margin: 0 10px 10px 0; font-size: .9em; }
+        .ui-widget-header p, .ui-widget-content p { margin: 0; }
+        #snaptarget { height: 140px; }
+    </style>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+
+      var stickytitle = ""
+        var stickycontent = ""
+        var idcount = 1
+        function addstickyclick()
+        {
+            
+            document.getElementById("sticky").innerHTML += '<li id="sticky"> <a href="#" onclick="editsticky(event)"> <h2 id="StickyTitle">New Sticky</h2> </a> </li>'
+            idcount++
+        }
+
+        function editsticky()
+        {
+            var thenote = event.target;
+            var input = prompt("Please enter your note", "");
+            thenote.innerHTML = input
+        }
+
+        // Still needs to be built
+        function addcolumn()
+        {
+            document.getElementById("").innerHTML += 
+        }
+
+  $( function() {
+    $( "#draggable" ).draggable({ snap: true });
+    $( "#draggable4" ).draggable({ grid: [ 20, 20 ] });
+  } );
+  </script>
+
+
+
+
+
+
+
+
+  @* </head>
+  
+  <body>
+
+  <div id="snaptarget" class="ui-widget-header">
+  <p>I&apos;m a snap target</p>
+    </div>
+ 
+    <br style="clear:both">
+
+  <div id="draggable4" class="draggable ui-widget-content">
+  <p>I snap to a 20 x 20 grid</p>
+
+</div>
+</head>
+<body> *@

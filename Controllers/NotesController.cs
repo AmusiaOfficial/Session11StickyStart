@@ -145,9 +145,15 @@ namespace stickynotes.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public IActionResult Board()
+        {
+            return View();
+        }
+
         private bool NoteExists(int id)
         {
             return _context.Note.Any(e => e.ID == id);
         }
+    
     }
 }

@@ -6,10 +6,39 @@
     <title>@ViewData["Title"] - stickynotes</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+ <style>
+    #bg-image {
+        width: 100%;
+        height: 90vh;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    #bg-image .ocean {
+        background-image: url('https://wallpaperaccess.com/full/1090533.jpg');
+    }
+    #bg-image .mountain {
+        background-image: url('https://i0.wp.com/wallur.com/wp-content/uploads/2016/12/mountains-background-8.jpg?fit=1920%2C1080');
+    }
+    #bg-image .desert {
+        background-image: url('https://wallpapercave.com/wp/aZy9vHP.jpg');
+    }
+    #bg-image .forrest{
+        background-image: url('https://wallpapercave.com/wp/vjaSDB8.jpg');
+    }
+</style>   
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <select onchange="setBackground()" class="form-control" id="exampleFormControlSelect1">
+                <option id value = "ocean">Ocean</option>
+                <option id value = "mountain">Mountain</option>
+                <option id value = "desert">Desert</option>
+                <option id value = "forrest">Forrest</option>
+            </select>
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">stickynotes</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -29,7 +58,7 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div id="bg-image" class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -43,6 +72,13 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        setBackground () {
+            alert("Background changed.");
+            $"".
+        },
+
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
