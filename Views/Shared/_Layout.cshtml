@@ -33,11 +33,12 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <select onchange="setBackground()" class="form-control" id="exampleFormControlSelect1">
+            <select onchange='setBackground(this)' class="form-control" id="exampleFormControlSelect1">
+                <option id value = ""></option>
                 <option id value = "ocean">Ocean</option>
                 <option id value = "mountain">Mountain</option>
                 <option id value = "desert">Desert</option>
-                <option id value = "forrest">Forrest</option>
+                <option id value = "forest">Forrest</option>
             </select>
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">stickynotes</a>
@@ -73,11 +74,11 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script>
-        setBackground () {
-            alert("Background changed.");
-            $('#bg-image').addClass 
-        },
+        function setBackground(selectImage) {
+            var value = selectImage.value; 
+            alert("Background image: " + value + " selected");
 
+        }
     </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

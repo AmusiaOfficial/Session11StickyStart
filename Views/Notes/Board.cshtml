@@ -5,11 +5,38 @@
     https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Bamboo_forest_in_Arashiyama_%28bottom_view%29.jpg/1599px-Bamboo_forest_in_Arashiyama_%28bottom_view%29.jpg
 *@
 
+@model stickynotes.Models.Note
 
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
 
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Body" class="control-label"></label>
+                <input asp-for="Body" class="form-control" />
+                <span asp-validation-for="Body" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EntryDate" class="control-label"></label>
+                <input asp-for="EntryDate" class="form-control" />
+                <span asp-validation-for="EntryDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
 
 <div class="scrollleft">
 
@@ -24,8 +51,7 @@
 
     <div class="column">
         <h3 class="column-header">To Do</h3>
-        @{
-            int columns = 2;}
+        @{int columns = 2;}
         @for (int i = 0; i < columns; i++)
         {
             <div id="sticky" + @i class="sticky">This is column number @i</div>
@@ -107,11 +133,12 @@
         position: relative;
         box-shadow: 0px 12px 25px -12px rgba(0,0,0,0.75);
 
-        @*-webkit-transform:rotate(-6deg);*@@*-o-transform:rotate(-6deg);*@@*-moz-transform:rotate(-6deg);*@
+        -webkit-transform:rotate(-6deg);
+        -o-transform:rotate(-6deg);
+        -moz-transform:rotate(-6deg);
         font-family: 'Permanent Marker', cursive;
         margin: 30px 0px;
         display: block;
-
     }
 
     .column-header {
@@ -129,7 +156,6 @@
         float: left;
         border-left: 1px solid lightgray;
         padding: 30px;
-
     }
 
     .column:last-child {
@@ -181,13 +207,13 @@
     }
 
     // Still needs to be built
-    function addcolumn() {
+    @* function addcolumn() {
         document.getElementById("").innerHTML += 
-        }
+        } *@
 
     $(function () {
-        $("#draggable").draggable({ snap: true });
-        $("#draggable4").draggable({ grid: [20, 20] });
+        @* $("#draggable").draggable({ snap: true });
+        $("#draggable4").draggable({ grid: [20, 20] }); *@
     });
 </script>
 
